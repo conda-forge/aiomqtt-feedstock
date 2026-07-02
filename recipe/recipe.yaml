@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: aiomqtt
-  version: "2.4.0"
+  version: "2.5.1"
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
   
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: ab0f18fc5b7ffaa57451c407417d674db837b00a9c7d953cccd02be64f046c17
+  sha256: 25a0a47d157e8f158d2da1110ea4786c0615518751e94f7b04976c977a8ff20d
 
 build:
   number: 0
