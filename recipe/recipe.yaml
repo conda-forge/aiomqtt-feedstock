@@ -44,8 +44,6 @@ tests:
         - site-packages/aiomqtt-${{ version }}.dist-info/WHEEL
         - site-packages/aiomqtt-${{ version }}.dist-info/direct_url.json
         - site-packages/aiomqtt-${{ version }}.dist-info/licenses/LICENSE
-        # Tests artifacts
-        - etc/conda/test-files/aiomqtt/*
   - python:
       imports:
         - aiomqtt
