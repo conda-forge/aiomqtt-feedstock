@@ -9,7 +9,7 @@ package:
   version: ${{ version }}
   
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/a/aiomqtt/aiomqtt-${{ version }}.tar.gz
   sha256: 25a0a47d157e8f158d2da1110ea4786c0615518751e94f7b04976c977a8ff20d
 
 build:
@@ -19,12 +19,12 @@ build:
 
 requirements:
   host:
-    - python ${{ python_min }}.*
     - hatchling
     - pip
+    - python ${{ python_min }}.*
   run:
-    - python >=${{ python_min }}
     - paho-mqtt >=2.1.0,<3.0.0
+    - python >=${{ python_min }}
     - typing_extensions >=4.4.0,<5.0.0
 
 tests:
@@ -38,13 +38,13 @@ tests:
         - site-packages/aiomqtt/py.typed
         - site-packages/aiomqtt/topic.py
         - site-packages/aiomqtt/types.py
-        - site-packages/aiomqtt-2.4.0.dist-info/INSTALLER
-        - site-packages/aiomqtt-2.4.0.dist-info/METADATA
-        - site-packages/aiomqtt-2.4.0.dist-info/RECORD
-        - site-packages/aiomqtt-2.4.0.dist-info/REQUESTED
-        - site-packages/aiomqtt-2.4.0.dist-info/WHEEL
-        - site-packages/aiomqtt-2.4.0.dist-info/direct_url.json
-        - site-packages/aiomqtt-2.4.0.dist-info/licenses/LICENSE
+        - site-packages/aiomqtt-${{ version }}.dist-info/INSTALLER
+        - site-packages/aiomqtt-${{ version }}.dist-info/METADATA
+        - site-packages/aiomqtt-${{ version }}.dist-info/RECORD
+        - site-packages/aiomqtt-${{ version }}.dist-info/REQUESTED
+        - site-packages/aiomqtt-${{ version }}.dist-info/WHEEL
+        - site-packages/aiomqtt-${{ version }}.dist-info/direct_url.json
+        - site-packages/aiomqtt-${{ version }}.dist-info/licenses/LICENSE
         # Tests artifacts
         - etc/conda/test-files/aiomqtt/*
   - python:
