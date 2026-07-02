@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: aiomqtt
-  version: "2.4.0"
+  version: "1.2.1"
 
 package:
   name: ${{ name }}
   version: ${{ version }}
   
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: ab0f18fc5b7ffaa57451c407417d674db837b00a9c7d953cccd02be64f046c17
+  url: https://pypi.org/packages/source/a/aiomqtt/aiomqtt-${{ version }}.tar.gz
+  sha256: 7582f4341f08ef7110dd9ab3a559454dc28ccda1eac502ff8f08a73b238ecede
 
 build:
   number: 0
@@ -20,7 +20,8 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - hatchling
+    - poetry-core >=1.0.0
+    - poetry-dynamic-versioning
     - pip
   run:
     - python >=${{ python_min }}
@@ -33,18 +34,15 @@ tests:
       files:
         - site-packages/aiomqtt/__init__.py
         - site-packages/aiomqtt/client.py
-        - site-packages/aiomqtt/exceptions.py
-        - site-packages/aiomqtt/message.py
         - site-packages/aiomqtt/py.typed
-        - site-packages/aiomqtt/topic.py
         - site-packages/aiomqtt/types.py
-        - site-packages/aiomqtt-2.4.0.dist-info/INSTALLER
-        - site-packages/aiomqtt-2.4.0.dist-info/METADATA
-        - site-packages/aiomqtt-2.4.0.dist-info/RECORD
-        - site-packages/aiomqtt-2.4.0.dist-info/REQUESTED
-        - site-packages/aiomqtt-2.4.0.dist-info/WHEEL
-        - site-packages/aiomqtt-2.4.0.dist-info/direct_url.json
-        - site-packages/aiomqtt-2.4.0.dist-info/licenses/LICENSE
+        - site-packages/aiomqtt-${{ version }}.dist-info/INSTALLER
+        - site-packages/aiomqtt-${{ version }}.dist-info/METADATA
+        - site-packages/aiomqtt-${{ version }}.dist-info/RECORD
+        - site-packages/aiomqtt-${{ version }}.dist-info/REQUESTED
+        - site-packages/aiomqtt-${{ version }}.dist-info/WHEEL
+        - site-packages/aiomqtt-${{ version }}.dist-info/direct_url.json
+        - site-packages/aiomqtt-${{ version }}.dist-info/licenses/LICENSE
         # Tests artifacts
         - etc/conda/test-files/aiomqtt/*
   - python:
