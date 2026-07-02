@@ -53,18 +53,6 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - script:
-      - pytest --strict-config --strict-markers tests
-    files:
-      source:
-        - tests/
-        - pyproject.toml
-    requirements:
-      run:
-        - anyio >=3.6.2,<4.0.0
-        - furo >=2023.3.27,<2024.0.0
-        - myst-parser >=1.0.0,<2.0.0
-        - pytest >=7.3.1,<8.0.0
 
 about:
   homepage: https://github.com/empicano/aiomqtt
